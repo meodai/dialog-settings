@@ -1,0 +1,45 @@
+$module-name: null !default;
+$module-settings: () !default;
+$module-cssvariables: false !default;
+
+@mixin settings($settings, $cssVariables:$module-cssvariables){
+  @if $cssVariables {
+    @each $key, $value in $settings {
+      --#{$module-name}-#{$key}: $value;
+    }
+  }
+  $module-settings: map-merge($module-settings, ($module-name: $settings) ) !global;
+}
+
+@function setting($key, $cssVariables:$module-cssvariables) {
+  $settings: map-get($module-settings, $module-name);
+  @if map-has-key($settings, $key) {
+    @if $cssVariables {
+      @return var(--#{$module-name}-#{$key});
+    } @else {
+      @return map-get($settings, $key);
+    }
+  } @else {
+    @error 'no setting called #{$key}'
+  }
+}
+
+/**
+ * Usage
+
+$module-name: 'somerandommodule';
+
+@include settings((
+  gutter         : 1rem,
+  color          : silver,
+  color-contrast : gold
+));
+
+.#{$module-name} {
+  padding: setting('gutter');
+  &__submodule {
+    color: setting(color);
+  }
+}
+
+*/
