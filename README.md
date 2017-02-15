@@ -1,8 +1,8 @@
 ![dialog(settings)](media/logo.png)
 # dialog(settings) :book:
-[![GitHub version](https://badge.fury.io/gh/meodai%2Fdialog-size.svg)](https://badge.fury.io/gh/meodai%2Fdialog-size)
-[![npm version](https://badge.fury.io/js/dialog-size.svg)](https://badge.fury.io/js/dialog-size)
-[![travis build](https://travis-ci.org/meodai/dialog-size.svg?branch=master)](https://travis-ci.org/meodai/dialog-size)
+[![GitHub version](https://badge.fury.io/gh/meodai%2Fdialog-settings.svg)](https://badge.fury.io/gh/meodai%2Fdialog-settings)
+[![npm version](https://badge.fury.io/js/dialog-settings.svg)](https://badge.fury.io/js/dialog-settings)
+[![travis build](https://api.travis-ci.org/meodai/dialog-settings.svg?branch=master)](https://travis-ci.org/meodai/dialog-settings)
 
 A simple key value store for module settings, to make modules more portable.
 With the nice side-effect that all settings can be output as native CSS variables.
@@ -43,6 +43,8 @@ npm install dialog-settings
       }
     }
     ```
+
+4. By setting the global variable `$module-cssvariables` the variable are rendered as `CSS` variables.
 
 ## License 👮🏼
 

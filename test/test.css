@@ -1,0 +1,14 @@
+.testmodule {
+  padding: 1rem; }
+  .testmodule__submodule {
+    color: silver; }
+
+:root {
+  --css-testmodule-gutter: 1rem;
+  --css-testmodule-color: silver;
+  --css-testmodule-color-contrast: gold; }
+
+.css-testmodule {
+  padding: var(--css-testmodule-gutter); }
+  .css-testmodule__submodule {
+    color: var(--css-testmodule-color); }
