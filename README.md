@@ -9,7 +9,7 @@
 A simple key value store for module settings, to make modules more portable.
 With the nice side-effect that all settings can be rendered as native CSS variables
 
-## Why?
+## Why ⁉️️
 1. Easy way to switch between rendered values and CSS variables.
 2. Better portabily: Only have to rename one string, not tons of variable names as well, when renaming/moving a module.
 3. Warn when variables are missing instead of failing the build. Allows to mock the CSS for a module withought knowing the values for each property.
