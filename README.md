@@ -7,7 +7,7 @@
 [![travis build](https://api.travis-ci.org/meodai/dialog-settings.svg?branch=master)](https://travis-ci.org/meodai/dialog-settings)
 
 A simple key value store for module settings, to make modules more portable.
-With the nice side-effect that all settings can be rendered as native CSS variables
+With the nice side-effect that all settings can be rendered as native CSS variables. Play with the [demo](http://www.sassmeister.com/gist/230dc13729262d55d92f1efbcd2a69a5).
 
 ## Why ⁉️️
 1. Easy way to switch between rendered values and CSS variables.
