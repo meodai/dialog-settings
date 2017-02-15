@@ -1,4 +1,11 @@
 /**
+ * dialog-settings - SASS/SCSS module settings
+ * @version v1.0.0
+ * (c) 2017 meodai
+ * @link https://github.com/meodai/dialog-settings#readme
+ * @license MIT
+ */
+ /**
  * Usage
 
 $module-name: 'somerandommodule';
@@ -22,7 +29,7 @@ $module-name: null !default;
 $module-settings: () !default;
 $module-cssvariables: false !default;
 
-@mixin settings($settings, $cssVariables: $module-cssvariables){
+@mixin settings($settings, $cssVariables:$module-cssvariables){
   @if $cssVariables {
     @each $key, $value in $settings {
       --#{$module-name}-#{$key}: $value;
