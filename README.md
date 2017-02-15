@@ -7,8 +7,43 @@
 [![travis build](https://api.travis-ci.org/meodai/dialog-settings.svg?branch=master)](https://travis-ci.org/meodai/dialog-settings)
 
 A simple key value store for module settings, to make modules more portable.
-With the nice side-effect that all settings can be output as native CSS variables.
+With the nice side-effect that all settings can be rendered as native CSS variables. Play with the [demo](http://www.sassmeister.com/gist/230dc13729262d55d92f1efbcd2a69a5).
 
+## Why ⁉️️
+1. Easy way to switch between rendered values and CSS variables.
+2. Better portabily: Only have to rename one string, not tons of variable names as well, when renaming/moving a module.
+3. Warn when variables are missing instead of failing the build. Allows to mock the CSS for a module withought knowing the values for each property.
+
+### Before
+```scss
+$module-name: 'mymodule';
+
+$mymodule-background: $colors-dark;
+$mymodule-color: $colors-contrast;
+$mymodule-margin: 2rem;
+
+.#{$module-name} {
+  color: $mymodule-color;
+  background: $mymodule-background;
+  margin: $mymodule-margin;
+}
+```
+### With dialog(settings)
+```scss
+$module-name: 'mymodule';
+
+@include settings((
+  color: $colors-dark,
+  background: $colors-contrast,
+  margin: 2rem
+));
+
+.#{$module-name} {
+  color: setting(color);
+  background: setting(background);
+  margin: setting(margin);
+}
+```
 ## Installation 💾
 
 ```
