@@ -1,4 +1,4 @@
-![dialog(size)](media/logo.png)
+![dialog(settings)](media/logo.png)
 # dialog(settings) :book:
 [![GitHub version](https://badge.fury.io/gh/meodai%2Fdialog-size.svg)](https://badge.fury.io/gh/meodai%2Fdialog-size)
 [![npm version](https://badge.fury.io/js/dialog-size.svg)](https://badge.fury.io/js/dialog-size)

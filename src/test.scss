@@ -1,0 +1,33 @@
+@import 'dialog-settings';
+
+$module-name: 'testmodule';
+
+@include settings((
+  gutter         : 1rem,
+  color          : silver,
+  color-contrast : gold,
+));
+
+.#{$module-name} {
+  padding: setting('gutter');
+  &__submodule {
+    color: setting(color);
+  }
+}
+
+$module-cssvariables: true;
+
+$module-name: 'css-testmodule';
+
+@include settings((
+  gutter         : 1rem,
+  color          : silver,
+  color-contrast : gold,
+));
+
+.#{$module-name} {
+  padding: setting('gutter');
+  &__submodule {
+    color: setting(color);
+  }
+}
