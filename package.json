@@ -1,10 +1,13 @@
 {
   "name": "dialog-settings",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "SASS/SCSS module settings",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "gulp test:sass"
+    "test": "gulp test:sass",
+    "build": "gulp build",
+    "dev": "gulp",
+    "deploy": "gulp build && gh-pages -d demo"
   },
   "repository": {
     "type": "git",

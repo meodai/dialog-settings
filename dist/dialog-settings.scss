@@ -1,38 +1,37 @@
 /**
  * dialog-settings - SASS/SCSS module settings
- * @version v1.0.0
+ * @version v1.1.0
  * (c) 2017 meodai
  * @link https://github.com/meodai/dialog-settings#readme
  * @license MIT
  */
- /**
- * Usage
+ /// USAGE:
 
-$module-name: 'somerandommodule';
+/// $module-name: 'somerandommodule';
 
-@include settings((
-  gutter         : 1rem,
-  color          : silver,
-  color-contrast : gold
-));
+/// @include settings((
+///  gutter         : 1rem,
+///  color          : silver,
+///  color-contrast : gold
+/// ));
 
-.#{$module-name} {
-  padding: setting('gutter');
-  &__submodule {
-    color: setting(color);
-  }
-}
-
-*/
+/// .#{$module-name} {
+///  padding: setting('gutter');
+///  &__submodule {
+///    color: setting(color);
+///  }
+/// }
 
 $module-name: null !default;
 $module-settings: () !default;
 $module-cssvariables: false !default;
 
-@mixin settings($settings, $cssVariables:$module-cssvariables){
+@mixin settings($settings, $cssVariables: $module-cssvariables){
   @if $cssVariables {
-    @each $key, $value in $settings {
-      --#{$module-name}-#{$key}: $value;
+    :root {
+      @each $key, $value in $settings {
+        --#{$module-name}-#{$key}: $value;
+      }
     }
   }
   $module-settings: map-merge($module-settings, ($module-name: $settings) ) !global;
