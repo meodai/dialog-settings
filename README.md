@@ -83,6 +83,34 @@ npm install dialog-settings
 
 4. By setting the global variable `$module-cssvariables` the variable are rendered as `CSS` variables.
 
+## Usage with [node-sass-json-importer](https://github.com/Updater/node-sass-json-importer)
+ 
+It can be usefull to store design settings in a seperate file, to create a nice API with the designer.
+Using [node-sass-json-importer](https://github.com/Updater/node-sass-json-importer) settings can be stored in a `JSON` file.
+
+**module-design-specs.json**
+```JSON
+{
+  "settings": {
+    "background-color": "#fff",
+    "stack": "1rem",
+    "color": "#212121"
+  }
+}
+```
+
+**module.scss**
+```scss
+@import 'module-design-specs.json';
+@include settings($settings);
+.module {
+  color: setting(color);
+  background: setting(background-color);
+  margin-bottom: setting(stack);
+}
+```
+
+
 ## License 👮🏼
 
 Created with ♥ by [meodai](//github.com/meodai). Licensed under the [MIT License](LICENSE).
